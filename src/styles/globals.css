@@ -211,9 +211,10 @@ a {
 
 .hero-surface {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.8fr);
+  gap: 28px;
   padding: 34px;
+  align-items: stretch;
 }
 
 .hero-surface::before,
@@ -223,6 +224,12 @@ a {
   inset: 0;
   background: linear-gradient(120deg, rgba(142, 255, 117, 0.08), transparent 42%);
   pointer-events: none;
+}
+
+.hero-copy {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
 }
 
 .hero-copy p,
@@ -238,19 +245,22 @@ a {
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.4rem, 4vw, 4.2rem);
-  max-width: 12ch;
-  line-height: 0.98;
+  font-size: clamp(2.8rem, 4.4vw, 4.9rem);
+  max-width: 15ch;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 .hero-copy > p:last-child {
-  max-width: 60ch;
+  max-width: 62ch;
 }
 
 .hero-aux {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   align-content: space-between;
+  justify-items: end;
 }
 
 .hero-actions,
@@ -264,6 +274,8 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  width: min(100%, 430px);
+  justify-self: end;
 }
 
 .hero-metrics div,
@@ -858,6 +870,14 @@ a {
 
   .hero-surface {
     grid-template-columns: 1fr;
+  }
+
+  .hero-aux {
+    justify-items: start;
+  }
+
+  .hero-metrics {
+    justify-self: start;
   }
 
   .topbar,
